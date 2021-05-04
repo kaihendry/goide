@@ -1,4 +1,4 @@
-YOURSRC=/$$HOME/tmp
+PROJDIR=/$$HOME/tmp
 
 # build the docker image
 build:
@@ -10,6 +10,6 @@ run:
 	docker container run --rm --interactive  \
 	  --tty \
 	  --name goide \
-	  --mount type=bind,source="$(YOURSRC)",target="/projects" \
+	  --mount type=bind,source="$(PROJDIR)",target="/projects" \
 	  goide
 .PHONY: run
