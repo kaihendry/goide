@@ -4,4 +4,4 @@ vim with:
 * dlv for debugging
 * gotests for generating tests
 
-Still surprisingly weighs in at 1.29GB 😳
+Still surprisingly weighs in at 2.19GB 😳

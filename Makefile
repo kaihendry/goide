@@ -9,7 +9,7 @@ build:
 run:
 	docker container run --rm --interactive  \
 	  --tty \
-	  --name workbench \
+	  --name goide \
 	  --mount type=bind,source="$(YOURSRC)",target="/projects" \
 	  goide
 .PHONY: run
