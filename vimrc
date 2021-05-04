@@ -78,6 +78,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " From https://github.com/neoclide/coc.nvim
 
+let g:coc_global_config="$HOME/coc-settings.json"
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.

@@ -1,0 +1,17 @@
+{
+  "go.goplsArgs": [
+    "-remote",
+    "auto",
+    "-logfile",
+    "/tmp/gopls.log"
+  ],
+  "go.goplsPath": "/usr/bin/gopls",
+  "go.goplsOptions": {
+    "completeUnimported": true,
+    "usePlaceholders": true
+  },
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
+  }
+}

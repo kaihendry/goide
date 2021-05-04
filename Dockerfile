@@ -1,30 +1,55 @@
-# https://github.com/marcoguerri/vim-env/blob/master/Dockerfile
-FROM golang:alpine
-WORKDIR /projects
+FROM archlinux:latest
 
-RUN apk add \
-    build-base \
-    git \
-    curl \
-    nodejs-current \
-    npm \
-    vim
+MAINTAINER Kai Hendry <hendry@iki.fi>
 
+RUN useradd -m dev
+RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+RUN sed -i "s/#Color/Color/" /etc/pacman.conf
+
+RUN pacman -Syu --noconfirm \
+	base-devel \
+	git \
+	sudo \
+	vim \
+	go \
+	gopls \
+	tar \
+	tmux \
+	bash \
+	starship \
+	nodejs npm
+
+USER dev
 ENV TERM alacritty
 
-RUN git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
-RUN git clone https://github.com/buoto/gotests-vim.git ~/.vim/pack/plugins/start/gotests-vim
-RUN git clone https://github.com/neoclide/coc.nvim.git ~/.vim/pack/plugins/start/coc.nvim
+ENV GOCACHE /tmp
+ENV HOME /home/dev
+ENV GOPATH $HOME/go
+ENV PATH $GOPATH/bin:$PATH
+
+RUN git clone https://aur.archlinux.org/yay.git /tmp/yay \
+	&& cd /tmp/yay \
+	&& makepkg -sri --noconfirm \
+	&& rm -rf /tmp/yay \
+	&& yay -S --noconfirm direnv autojump
+
+COPY --chown=dev:dev vimrc /home/dev/.vimrc
+COPY --chown=dev:dev bashrc /home/dev/.bashrc
+COPY --chown=dev:dev coc-settings.json /home/dev/.vim/
+
+RUN git clone --depth 1 https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+RUN git clone --depth 1 https://github.com/buoto/gotests-vim.git ~/.vim/pack/plugins/start/gotests-vim
+RUN git clone --depth 1 https://github.com/neoclide/coc.nvim.git ~/.vim/pack/plugins/start/coc.nvim
+RUN git clone --depth 1 https://github.com/kien/ctrlp.vim ~/.vim/pack/plugins/start/ctrlp.vim
 
 RUN go get github.com/go-delve/delve/cmd/dlv
-RUN go get golang.org/x/lint/golint
-RUN go get -u github.com/cweill/gotests/...
+RUN go get github.com/cweill/gotests/...
 
 RUN vim -esN +GoInstallBinaries +q
 
 RUN (echo | vim -c "CocInstall -sync coc-tsserver \
             coc-git \
-            coc-bookmark \
             coc-snippets \
             coc-highlight \
             coc-json \
@@ -43,4 +68,4 @@ RUN (echo | vim -c "CocInstall -sync coc-tsserver \
             coc-prettier|q" > /dev/null && \
             echo 0 ) || true
 
-COPY vimrc /root/.vimrc
+ENTRYPOINT [ "tmux" ]
