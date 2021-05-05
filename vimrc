@@ -58,3 +58,7 @@ set wildmenu
 inoremap <C-H> <C-W>
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"

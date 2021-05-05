@@ -35,6 +35,7 @@ RUN git clone --depth 1 https://aur.archlinux.org/yay.git /tmp/yay \
 RUN git clone --depth 1 https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 RUN git clone --depth 1 https://github.com/buoto/gotests-vim.git ~/.vim/pack/plugins/start/gotests-vim
 RUN git clone --depth 1 https://github.com/kien/ctrlp.vim ~/.vim/pack/plugins/start/ctrlp.vim
+RUN git clone --depth 1 https://github.com/SirVer/ultisnips ~/.vim/pack/plugins/start/ultisnips
 
 RUN vim -esN +GoInstallBinaries +q
 
