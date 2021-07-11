@@ -28,7 +28,7 @@ ENV PATH $GOPATH/bin:$PATH
 
 RUN git clone --depth 1 https://aur.archlinux.org/yay.git /tmp/yay \
 	&& cd /tmp/yay \
-	&& makepkg -sri --noconfirm \
+	&& sudo makepkg -sri --noconfirm \
 	&& rm -rf /tmp/yay \
 	&& yay --cachedir /tmp -S --noconfirm autojump && sudo rm -rf /tmp/*
 
