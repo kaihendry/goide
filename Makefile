@@ -1,4 +1,5 @@
 PROJDIR=$(shell pwd)
+IMAGE=hendry/goide
 
 # run goide in present working directory
 run:
@@ -6,10 +7,15 @@ run:
 	  --tty \
 	  --name goide \
 	  --mount type=bind,source="$(PROJDIR)",target="/proj" \
-	  hendry/goide
+	  $(IMAGE)
 .PHONY: run
+
+# update the docker image
+update:
+	docker pull $(IMAGE)
+.PHONY: build
 
 # build the docker image
 build:
-	docker build -t hendry/goide .
+	docker build -t $(IMAGE) .
 .PHONY: build
