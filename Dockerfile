@@ -26,12 +26,6 @@ ENV HOME /home/dev
 ENV GOPATH $HOME/go
 ENV PATH $GOPATH/bin:$PATH
 
-RUN git clone --depth 1 https://aur.archlinux.org/yay.git /tmp/yay \
-	&& cd /tmp/yay \
-	&& sudo makepkg -sri --noconfirm \
-	&& rm -rf /tmp/yay \
-	&& yay --cachedir /tmp -S --noconfirm autojump && sudo rm -rf /tmp/*
-
 RUN git clone --depth 1 https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 RUN git clone --depth 1 https://github.com/buoto/gotests-vim.git ~/.vim/pack/plugins/start/gotests-vim
 RUN git clone --depth 1 https://github.com/kien/ctrlp.vim ~/.vim/pack/plugins/start/ctrlp.vim
