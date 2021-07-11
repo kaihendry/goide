@@ -8,16 +8,19 @@ RUN sed -i "s/#Color/Color/" /etc/pacman.conf
 
 RUN pacman --cachedir /tmp -Syu --noconfirm \
 	base-devel \
+	bash \
 	git \
-	sudo \
-	vim \
 	go \
 	gopls \
+	python \
+	starship \
+	sudo \
 	tar \
 	tmux \
-	bash \
-	starship \
+	vim \
 	&& rm -rf /tmp/*
+
+# python annoyingly needed for UltiSnips
 
 USER dev
 ENV TERM alacritty
