@@ -1,4 +1,4 @@
-FROM archlinux:latest
+FROM archlinux:base-devel-20210131.0.14634
 LABEL maintainer="hendry@iki.fi"
 
 RUN useradd -m dev
@@ -45,6 +45,6 @@ RUN go get github.com/cweill/gotests/...
 COPY --chown=dev:dev vimrc /home/dev/.vimrc
 COPY --chown=dev:dev bashrc /home/dev/.bashrc
 
-WORKDIR /projects
+WORKDIR /proj
 
 ENTRYPOINT [ "bash" ]
