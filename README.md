@@ -13,10 +13,12 @@ Still surprisingly weighs in at 2.19GB 😳
 
 # Keyboard shortcuts
 
+<kbd>\\</kbd> is called the "leader" key in vim.
+
 * <kbd>\r</kbd> Run current buffer
 * <kbd>F12</kbd> Show definition, <kbd>C-o</kbd> to switch back
 * <kbd>C-g</kbd> Show functions / declarations
-* <kbd>\t</kbd> Go test, <kbd>\ga</kbd> swich back to code
+* <kbd>\t</kbd> Go test, <kbd>\ga</kbd> switch between test and code
 * <kbd>C-Bs</kbd> Kill last word
 
 ## Debug
