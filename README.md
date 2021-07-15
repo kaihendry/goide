@@ -13,19 +13,18 @@ Still surprisingly weighs in at 2.19GB 😳
 
 # Keyboard shortcuts
 
-	* \r Run current buffer
-	* \T Gotest
-	* \t Go test in function
-	* F12 Show definition
-	* C-g Show functions / declarations
-	* C-Bs Kill last word
+* \r Run current buffer
+* F12 Show definition
+* C-g Show functions / declarations
+* \T Gotest
+* \t Go test in function
+* C-Bs Kill last word
 
 ## Debug
 
-	F5 Start / Continue
-	F8 Stop
-	F9 Toggle breakpoint
-	F10 Debug next line
-	F11 Debug step into next function
-
-* [UltiSnips snippets](https://github.com/fatih/vim-go/blob/master/gosnippets/UltiSnips/go.snippets) with Tab
+* <kbd>F5</kbd> Start / Continue
+* <kbd>F8</kbd> Stop
+* <kbd>F9</kbd> Toggle breakpoint
+* <kbd>F10</kbd> Debug next line
+* <kbd>F11</kbd> Debug step into next function
+* [UltiSnips snippets](https://github.com/fatih/vim-go/blob/master/gosnippets/UltiSnips/go.snippets) with <kbd>Tab</kbd>
