@@ -29,3 +29,13 @@ Still surprisingly weighs in at 2.19GB 😳
 * <kbd>F10</kbd> Debug next line
 * <kbd>F11</kbd> Debug step into next function
 * [UltiSnips snippets](https://github.com/fatih/vim-go/blob/master/gosnippets/UltiSnips/go.snippets) with <kbd>Tab</kbd>
+
+# Compared to VS code
+
+Following https://www.youtube.com/watch?v=1MXIGYrMk80 with
+https://golang.org/doc/code, this project has a couple of advantages:
+
+* Docker image streamlines setup. No hoop jumping to install the entire environment assuming you have Docker and `make` installed
+* Efficient vim key bindings, use `vimtutor` to learn how to edit with it
+* Can be used easily upon remote environments, a **terminal environment** is all you need
+* `:Gotests` makes it easier to generate tests
