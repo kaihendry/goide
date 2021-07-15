@@ -41,8 +41,7 @@ imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 " Go specific mapping
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
-au filetype go nmap <leader>t :w<CR>:GoTestFunc<CR>
-au filetype go nmap <leader>T :w<CR>:GoTest<CR>
+au filetype go nmap <leader>t :w<CR>:GoTest<CR>
 au filetype go nmap <leader>r :w<CR>:GoRun<CR>
 au FileType go nmap <F12> <Plug>(go-def)
 

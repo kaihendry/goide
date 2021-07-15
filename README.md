@@ -1,8 +1,8 @@
 vim with:
 
-* vim-go for a Golang IDE
-* dlv for debugging
-* gotests for generating tests
+* [vim-go](https://github.com/fatih/vim-go) for a Golang IDE
+* [dlv](https://github.com/go-delve/delve) for debugging
+* :GoTests for generating tests
 
 Still surprisingly weighs in at 2.19GB 😳
 
@@ -13,12 +13,11 @@ Still surprisingly weighs in at 2.19GB 😳
 
 # Keyboard shortcuts
 
-* \r Run current buffer
-* F12 Show definition
-* C-g Show functions / declarations
-* \T Gotest
-* \t Go test in function
-* C-Bs Kill last word
+* <kbd>\r</kbd> Run current buffer
+* <kbd>F12</kbd> Show definition, <kbd>C-o</kbd> to switch back
+* <kbd>C-g</kbd> Show functions / declarations
+* <kbd>\t</kbd> Go test, <kbd>\ga</kbd> swich back to code
+* <kbd>C-Bs</kbd> Kill last word
 
 ## Debug
 

@@ -1,4 +1,4 @@
-FROM archlinux:base-devel-20210131.0.14634
+FROM archlinux
 LABEL maintainer="hendry@iki.fi"
 
 RUN useradd -m dev
