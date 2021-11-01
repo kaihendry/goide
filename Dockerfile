@@ -1,4 +1,4 @@
-FROM archlinux:base-devel-20210131.0.14634
+FROM archlinux
 LABEL maintainer="hendry@iki.fi"
 
 RUN useradd -m dev
@@ -20,10 +20,9 @@ RUN pacman --cachedir /tmp -Syu --noconfirm \
 	vim \
 	&& rm -rf /tmp/*
 
-# python annoyingly needed for UltiSnips
+# python annoyingly required for UltiSnips
 
 USER dev
-ENV TERM alacritty
 
 ENV HOME /home/dev
 ENV GOPATH $HOME/go
@@ -36,12 +35,12 @@ RUN git clone --depth 1 https://github.com/SirVer/ultisnips ~/.vim/pack/plugins/
 
 RUN vim -esN +GoInstallBinaries +q
 
-RUN go get github.com/go-delve/delve/cmd/dlv
-RUN go get github.com/cweill/gotests/...
+RUN go install github.com/go-delve/delve/cmd/dlv@latest
+RUN go install github.com/cweill/gotests/...@latest
 
 COPY --chown=dev:dev vimrc /home/dev/.vimrc
 COPY --chown=dev:dev bashrc /home/dev/.bashrc
 
-WORKDIR /proj
+WORKDIR /src
 
 ENTRYPOINT [ "bash" ]

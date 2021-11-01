@@ -6,7 +6,7 @@ run:
 	docker container run --rm --interactive  \
 	  --tty \
 	  --name goide \
-	  --mount type=bind,source="$(PROJDIR)",target="/proj" \
+	  --mount type=bind,source="$(PROJDIR)",target="/src" \
 	  $(IMAGE)
 .PHONY: run
 
