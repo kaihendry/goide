@@ -4,12 +4,9 @@ vim with:
 * [dlv](https://github.com/go-delve/delve) for debugging
 * :GoTests for generating tests
 
-
-Still surprisingly weighs in at 2.19GB 😳
-
 # Try it!
 
-	alias ge='f(){ docker run -it --rm -v $(pwd):/src hendry/goide; unset -f f; }; f'
+	alias g='docker run -it --rm -v $(pwd):/src hendry/goide:latest $@'
 
 # Keyboard shortcuts
 
@@ -54,3 +51,4 @@ https://golang.org/doc/code, this project has a couple of advantages:
 # Elsewhere
 
 * https://tpaschalis.github.io/vim-go-setup/
+* https://github.com/kaihendry/nvim
