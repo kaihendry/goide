@@ -22,8 +22,8 @@ RUN vim -esN +GoInstallBinaries +q
 RUN go install github.com/go-delve/delve/cmd/dlv@latest && \
 	go install github.com/cweill/gotests/...@latest
 
-COPY vimrc ~/.vimrc
-COPY bashrc ~/.bashrc
+COPY vimrc /root/.vimrc
+COPY bashrc /root/.bashrc
 
 WORKDIR /src
 

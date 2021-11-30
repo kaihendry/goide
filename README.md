@@ -8,6 +8,10 @@ vim with:
 
 	alias g='docker run -it --rm -v $(pwd):/src hendry/goide:latest $@'
 
+Prefer a shell instead?
+
+	docker run -it --rm --entrypoint=bash -v $(pwd):/src hendry/goide
+
 # Keyboard shortcuts
 
 <kbd>\\</kbd> is called the "leader" key in vim.
